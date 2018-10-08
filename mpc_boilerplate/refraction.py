@@ -1,6 +1,9 @@
 # ~/Envs/mpcvenv/mpc_boilerplate/mpc_boilerplate/refraction.py
+# Copied from...
+# https://nsls-ii.github.io/scientific-python-cookiecutter/the-code-itself.html
 
 import numpy as np
+
 
 def snell(theta_inc, n1, n2):
     """
@@ -28,4 +31,3 @@ def snell(theta_inc, n1, n2):
     0.5605584137424605
     """
     return np.arcsin(n1 / n2 * np.sin(theta_inc))
-
