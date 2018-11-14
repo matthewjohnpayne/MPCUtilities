@@ -1,0 +1,10 @@
+{
+  "tests/test_classes_kepcart.py": true,
+  "tests/test_ele220.py": true,
+  "tests/test_helloworld.py": true,
+  "tests/test_leapsec.py": true,
+  "tests/test_mpcutilities.py": true,
+  "tests/test_obs80.py": true,
+  "tests/test_obscode.py": true,
+  "tests/test_phys_const.py": true
+}
