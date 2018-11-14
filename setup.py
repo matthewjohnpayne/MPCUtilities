@@ -15,7 +15,7 @@ from setuptools import Extension
 # -------------------------------------------------------------
 # Classes & Functions to get C-code (kepcart) to compile
 # -------------------------------------------------------------
-'''
+
 def compileKepcart():
     loc = pkg_resources.Environment()['mpcutilities'][0].location
     subprocess.check_call(
@@ -33,7 +33,7 @@ class CompileInstall(setuptools.command.install.install):
     def run(self):
         super().run()
         compileKepcart()
-'''
+
 # -------------------------------------------------------------
 
 
@@ -84,5 +84,5 @@ setup(
     version='0.1.2',
     zip_safe=False,
     #ext_modules=[Extension("kepcart", ["mpcutilities/kepcart_src/kepcart.c", ])]
-    #cmdclass={'develop': CompileDevelop, 'install': CompileInstall}
+    cmdclass={'develop': CompileDevelop, 'install': CompileInstall}
 )
