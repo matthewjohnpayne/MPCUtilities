@@ -1,3 +1,3 @@
 gcc -c -Wall -Werror -fpic kepcart.c
-gcc -shared -o kepcart.so kepcart.o
+gcc -shared -o libkepcart.so kepcart.o
 

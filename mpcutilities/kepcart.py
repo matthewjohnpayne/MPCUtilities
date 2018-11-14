@@ -1,4 +1,3 @@
-#/mpcutilities/mpcutilities/kepcart.py
 """
 
  --------------------------------------------------------------
@@ -29,7 +28,9 @@ import mpcutilities.classes     as Classes
 # Import local files / dirs  
 # --------------------------------------------------------------
 #lib = CDLL(os.path.join(os.path.dirname(__file__), 'kepcart_src/libkepcart.so'))
-lib = CDLL(resource_filename('mpcutilities','kepcart.so'))
+#lib = CDLL(resource_filename('mpcutilities','kepcart.so'))
+#lib = CDLL('libkepcart.so')
+lib = CDLL(os.path.join(os.path.dirname(__file__), 'libkepcart.so'))
 
 
 # Define "kepcart" routines
