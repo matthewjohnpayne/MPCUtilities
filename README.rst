@@ -7,7 +7,7 @@ MPC Utilities
         :target: https://pypi.python.org/pypi/mpcutilities
 
 .. image:: https://img.shields.io/travis/matthewjohnpayne/mpcutilities.svg
-        :target: https://travis-ci.org/matthewjohnpayne/mMPCUtilities
+        :target: https://travis-ci.org/matthewjohnpayne/MPCUtilities
 
 .. image:: https://readthedocs.org/projects/mpcutilities/badge/?version=latest
         :target: https://mpcutilities.readthedocs.io/en/latest/?badge=latest
