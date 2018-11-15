@@ -35,7 +35,7 @@ import mpcutilities.phys_const as PHYS
 import mpcutilities.mpcutilities as MPCU
 
 
-# (i) Basic test(s) of Observatory-Class
+# Basic test(s) of Observatory-Class
 # ----------------------------------------------------------
 
 def test_ObsCodesFile_exists_and_is_populated():

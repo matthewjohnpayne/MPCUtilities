@@ -105,10 +105,10 @@ def test_cart2kep_array():
 
 def test_keplerians():
     '''
-        keplerians should be exactly the same as "cart2kep_array"
-        - test that it is
-        (Provided for backward compatibility with Holman's legacy code)
-        '''
+    keplerians should be exactly the same as "cart2kep_array"
+    - test that it is
+    (Provided for backward compatibility with Holman's legacy code)
+    '''
     # Create array of CartStates of length 2
     # Sample data for Ceres from JPL
     N                 = 2
@@ -126,6 +126,9 @@ def test_keplerians():
     a_C2K,e_C2K,i_C2K,O_C2K,o_C2K,M_C2K = arrays_C2K
     a_KEP,e_KEP,i_KEP,O_KEP,o_KEP,M_KEP = arrays_KEP
     assert( np.allclose( (a_C2K,e_C2K,i_C2K,O_C2K,o_C2K,M_C2K) , (a_KEP,e_KEP,i_KEP,O_KEP,o_KEP,M_KEP) ))
+
+
+
 
 
 
@@ -164,6 +167,34 @@ def test_cartesian():
     np.allclose(    np.array((stateK2C.x,stateK2C.y,stateK2C.z,stateK2C.xd,stateK2C.yd,stateK2C.zd)) ,
                     np.array((stateCART.x,stateCART.y,stateCART.z,stateCART.xd,stateCART.yd,stateCART.zd))
                 )
+
+
+
+
+
+
+def test_internal_consistency_of_conversions():
+    '''
+    Should be able to transform back-and-forth between keplerian & cartesian without loss of accuracy
+    '''
+
+    # Create elements (sample data for Ceres from JPL Horizons)
+    a,e,i,O,o,M       = (2.781870259390299, 0.07692192514945771, 0.18480538653567896, 1.4012469961929193, 1.237855673926063, -1.0950384781408455)
+    a0,e0,i0,O0,o0,M0 = a,e,i,O,o,M
+    for i in range(10):
+        
+        # Use kep2cartState to calculate the cartesian elements
+        S             = kc.kep2cartState(PHYS.GMsun , a,e,i,O,o,M)
+        
+        # Use cart2kep to return to the elements
+        els    = kc.cart2kep(PHYS.GMsun , S)
+        
+        # Check accuracy (compared to original)
+        str = " Loop Vals: (%f,%f,%f,%f,%f,%f), Orig (%f,%f,%f,%f,%f,%f)" %(a,e,i,O,o,M   ,    a0,e0,i0,O0,o0,M0)
+        assert np.allclose( np.array([a,e,i,O,o,M]), np.array([a0,e0,i0,O0,o0,M0])  , atol=1e-10), str
+
+
+
 
 
 def test_kep2cartStateArray():
