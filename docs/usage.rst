@@ -4,14 +4,16 @@ Usage
 
 To use MPC Utilities in a project::
 
-    import mpcutilities
+    import mpcutilities.mpcutilities as MPCU
+    import mpcutilities.kepcart as kc
+    import mpcutilities.phys_const as PHYS
+    import mpcutilities.classes as classes
 
 =======
 Kepcart
 =======
 
 Details of the functions in the :mod:`kepcart` module for transforming between Keplerian and Cartesian coordinates.
-Note that one of the functions, ``kepState2cartPV`` is currently commented-out and unusable.
 
 .. automodule:: mpcutilities.kepcart
    :members:		

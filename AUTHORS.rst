@@ -10,4 +10,6 @@ Development Lead
 Contributors
 ------------
 
-None yet. Why not be the first?
+* Matthew Holman <mholman@cfa.harvard.edu>
+* Sonia Keys
+* ... 
